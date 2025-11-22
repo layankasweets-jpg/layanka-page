@@ -26,7 +26,6 @@
       padding: 24px 12px;
     }
 
-    /* تكيُّف بسيط مع الوضع الداكن */
     @media (prefers-color-scheme: dark) {
       body {
         background: radial-gradient(circle at top, #86601f 0, #4c3010 50%, #261306 100%);
@@ -125,7 +124,6 @@
       opacity: 0.9;
     }
 
-    /* شاشة البداية (Start) */
     #intro-overlay {
       position: fixed;
       inset: 0;
@@ -199,7 +197,7 @@
 </head>
 <body>
 
-  <!-- شاشة البداية مع زر START -->
+  <!-- شاشة البداية Start -->
   <div id="intro-overlay">
     <div class="intro-box">
       <img src="logo.png" alt="Layanka Sweets logo" class="intro-logo">
@@ -237,7 +235,6 @@
       <span title="Email">✉️</span>
     </div>
 
-    <!-- الأزرار الرئيسية -->
     <a class="btn" href="https://www.instagram.com/layanka.sweets/" target="_blank">
       <span class="icon">📸</span> Instagram – Layanka Sweets
     </a>
@@ -246,7 +243,6 @@
       <span class="icon">🎶</span> TikTok – Layanka Sweets
     </a>
 
-    <!-- زر منيو PDF (غيّر الرابط حسب مكان الملف) -->
     <a class="btn" href="menu.pdf" target="_blank">
       <span class="icon">📄</span> View Menu (PDF)
     </a>
@@ -269,7 +265,6 @@
   </div>
 
   <script>
-    // إخفاء شاشة البداية عند الضغط على Start
     document.addEventListener("DOMContentLoaded", function () {
       var startBtn = document.getElementById("start-btn");
       var overlay = document.getElementById("intro-overlay");
