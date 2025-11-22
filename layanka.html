@@ -8,80 +8,212 @@
   <meta name="description" content="Layanka Sweets - Abu Dhabi, Rabdan Mall. Honey cake, Napoleon, Red Velvet and more, made fresh daily. حلويات وكيكات فاخرة في ربدان مول.">
 
   <style>
+    :root {
+      --gold-dark: #a97328;
+      --gold-mid: #d3a970;
+      --gold-light: #fdf5e9;
+      --text-main: #ffffff;
+      --btn-text: #8b5a14;
+      --btn-text-hover: #70440d;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(#b8862f, #d3a970);
-      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top, #d9b16a 0, #a97328 45%, #7f541b 100%);
+      color: var(--text-main);
       text-align: center;
       padding: 24px 12px;
     }
+
+    /* تكيُّف بسيط مع الوضع الداكن */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: radial-gradient(circle at top, #86601f 0, #4c3010 50%, #261306 100%);
+      }
+    }
+
     .card {
       max-width: 480px;
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.15);
-      border-radius: 16px;
-      padding: 24px 20px 28px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: 20px;
+      padding: 26px 20px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+      animation: fadeUp 0.6s ease-out 0.2s both;
     }
+
     .logo {
       width: 110px;
       height: auto;
       margin-bottom: 10px;
       border-radius: 50%;
     }
+
     h1 {
       margin: 8px 0 4px;
       font-size: 28px;
+      letter-spacing: 0.5px;
     }
+
     .sub-en {
       margin: 4px 0;
       font-size: 15px;
     }
+
     .sub-ar {
       margin: 2px 0 14px;
       font-size: 14px;
       direction: rtl;
     }
+
     p {
       font-size: 14px;
-      line-height: 1.4;
-      margin-bottom: 16px;
+      line-height: 1.5;
+      margin: 10px 0 18px;
     }
+
     .icons-row {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 16px;
+      margin-bottom: 16px;
       font-size: 20px;
+      animation: floatIcons 4s ease-in-out infinite;
     }
+    .icons-row span {
+      background: rgba(0,0,0,0.22);
+      padding: 6px 8px;
+      border-radius: 50%;
+    }
+
     .btn {
       display: block;
       width: 100%;
-      margin: 6px 0;
+      margin: 7px 0;
       padding: 12px 10px;
       border-radius: 999px;
       border: none;
       text-decoration: none;
-      color: #b8862f;
+      color: var(--btn-text);
       background: #fff;
-      font-weight: bold;
+      font-weight: 600;
       font-size: 14px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      transition: transform 0.14s ease-out,
+                  box-shadow 0.14s ease-out,
+                  background 0.14s ease-out,
+                  color 0.14s ease-out;
     }
+
     .btn span.icon {
       margin-right: 8px;
+      font-size: 16px;
     }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      background: var(--gold-light);
+      color: var(--btn-text-hover);
+    }
+
     .footer-small {
-      margin-top: 16px;
+      margin-top: 18px;
       font-size: 12px;
       opacity: 0.9;
+    }
+
+    /* شاشة البداية (Start) */
+    #intro-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, #d9b16a 0, #a97328 45%, #7f541b 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+    }
+    #intro-overlay.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .intro-box {
+      background: rgba(0,0,0,0.4);
+      padding: 26px 22px;
+      border-radius: 22px;
+      max-width: 360px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .intro-logo {
+      width: 90px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .intro-title {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+    .intro-sub {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    #start-btn {
+      padding: 10px 26px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      background: #fff;
+      color: var(--btn-text);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
+    }
+    #start-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      background: var(--gold-light);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatIcons {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
     }
   </style>
 </head>
 <body>
+
+  <!-- شاشة البداية مع زر START -->
+  <div id="intro-overlay">
+    <div class="intro-box">
+      <img src="logo.png" alt="Layanka Sweets logo" class="intro-logo">
+      <div class="intro-title">Layanka Sweets</div>
+      <div class="intro-sub">
+        Welcome to our cake & dessert boutique in Rabdan Mall.<br>
+        أهلاً بكم في ليانكا سويتس – ربدان مول.
+      </div>
+      <button id="start-btn">Start</button>
+    </div>
+  </div>
+
+  <!-- الصفحة الرئيسية -->
   <div class="card">
-    <!-- هنا صورة اللوغو -->
     <img src="logo.png" alt="Layanka Sweets logo" class="logo">
 
     <h1>Layanka Sweets</h1>
@@ -98,7 +230,6 @@
       تشكيلة مميزة من كيك العسل، كيك نابليون، كيك المخمل الأحمر وغيرها، نعدّها يوميًا بحبّ.
     </p>
 
-    <!-- صف أيقونات صغيرة وسطية (اختياري للزينة فقط) -->
     <div class="icons-row">
       <span title="Instagram">📸</span>
       <span title="Location">📍</span>
@@ -106,13 +237,18 @@
       <span title="Email">✉️</span>
     </div>
 
-    <!-- الأزرار الرئيسية بدون أي تكرار -->
+    <!-- الأزرار الرئيسية -->
     <a class="btn" href="https://www.instagram.com/layanka.sweets/" target="_blank">
       <span class="icon">📸</span> Instagram – Layanka Sweets
     </a>
 
     <a class="btn" href="https://www.tiktok.com/@layankasweets" target="_blank">
       <span class="icon">🎶</span> TikTok – Layanka Sweets
+    </a>
+
+    <!-- زر منيو PDF (غيّر الرابط حسب مكان الملف) -->
+    <a class="btn" href="menu.pdf" target="_blank">
+      <span class="icon">📄</span> View Menu (PDF)
     </a>
 
     <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Layanka+Sweets+Rabdan+Mall" target="_blank">
@@ -131,6 +267,18 @@
       Open daily – fresh cakes and desserts.
     </div>
   </div>
+
+  <script>
+    // إخفاء شاشة البداية عند الضغط على Start
+    document.addEventListener("DOMContentLoaded", function () {
+      var startBtn = document.getElementById("start-btn");
+      var overlay = document.getElementById("intro-overlay");
+      if (startBtn && overlay) {
+        startBtn.addEventListener("click", function () {
+          overlay.classList.add("hide");
+        });
+      }
+    });
+  </script>
 </body>
 </html>
-
