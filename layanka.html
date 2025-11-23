@@ -232,6 +232,71 @@
         transform: translateY(0);
       }
     }
+      /* ====== LAYANKA – CAKE MENU STYLES (يمكن حذف هذا البلوك لو ألغيت المنيو) ====== */
+  .cake-menu {
+    margin-top: 26px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .cake-menu-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .cake-menu-sub {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-bottom: 14px;
+  }
+
+  .cake-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .cake-item {
+    background: #ffffff;
+    color: var(--btn-text);
+    border-radius: 18px;
+    padding: 10px 10px 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  }
+
+  .cake-item img.cake-photo {
+    width: 100%;
+    max-height: 210px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .cake-name-main {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .cake-name-alt {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 6px;
+  }
+
+  .cake-prices {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .cake-prices strong {
+    font-weight: 700;
+  }
+  /* ====== END LAYANKA – CAKE MENU STYLES ====== */
+
   </style>
 </head>
 <body>
@@ -355,6 +420,128 @@
       </span>
       Email: layanka.sweets@gmail.com
     </a>
+    <!-- ====== LAYANKA – CAKE MENU SECTION (يمكن حذفه بالكامل بسهولة) ====== -->
+    <section class="cake-menu" id="cake-menu">
+      <div class="cake-menu-title">Cake Menu – قائمة الكيك</div>
+      <div class="cake-menu-sub">
+        Whole cakes & slices – كيك كامل وشرائح جاهزة للتقديم.
+      </div>
+
+      <div class="cake-grid">
+
+        <!-- Honey Cake -->
+        <article class="cake-item">
+          <img src="1-Honey 1.png" alt="Honey Cake" class="cake-photo">
+          <div class="cake-name-main">Honey Cake – كيك العسل – Медовик</div>
+          <div class="cake-name-alt">Classic honey layers with light cream.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>130 AED / kg</strong><br>
+            Slice: <strong>13 AED</strong>
+          </p>
+        </article>
+
+        <!-- Napoleon Cake -->
+        <article class="cake-item">
+          <img src="2-Napolion 1.png" alt="Napoleon Cake" class="cake-photo">
+          <div class="cake-name-main">Napoleon Cake – كيك نابليون – Наполеон</div>
+          <div class="cake-name-alt">Crispy puff layers with rich cream.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>130 AED / kg</strong><br>
+            Slice: <strong>13 AED</strong>
+          </p>
+        </article>
+
+        <!-- Red Velvet -->
+        <article class="cake-item">
+          <img src="3-Velvet 1.png" alt="Red Velvet Cake" class="cake-photo">
+          <div class="cake-name-main">Red Velvet – كيك المخمل الأحمر – Красный бархат</div>
+          <div class="cake-name-alt">Moist red velvet with cream cheese frosting.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>130 AED / kg</strong><br>
+            Slice: <strong>13 AED</strong>
+          </p>
+        </article>
+
+        <!-- Chess Cake -->
+        <article class="cake-item">
+          <img src="4-Chess -3-.png" alt="Chess Cake" class="cake-photo">
+          <div class="cake-name-main">Chess Cake – كيك الشطرنج – Шахматный торт</div>
+          <div class="cake-name-alt">Vanilla & cocoa squares with cream decoration.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>130 AED / kg</strong><br>
+            Slice: <strong>13 AED</strong>
+          </p>
+        </article>
+
+        <!-- Vanilla Cake -->
+        <article class="cake-item">
+          <img src="5-Vanilla.png" alt="Vanilla Cake" class="cake-photo">
+          <div class="cake-name-main">Vanilla Cake – كيك الفانيلا – Ванильный торт</div>
+          <div class="cake-name-alt">Soft vanilla sponge with light cream.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>130 AED / kg</strong><br>
+            Slice: <strong>13 AED</strong>
+          </p>
+        </article>
+
+        <!-- Fruit Cake -->
+        <article class="cake-item">
+          <img src="6-Fruit Cake.png" alt="Fruit Cake" class="cake-photo">
+          <div class="cake-name-main">Fruit Cake – كيك الفواكه – Фруктовый торт</div>
+          <div class="cake-name-alt">Light cream with assorted fresh fruits.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>150 AED / kg</strong><br>
+            Slice: <strong>15 AED</strong>
+          </p>
+        </article>
+
+        <!-- Bird's Milk -->
+        <article class="cake-item">
+          <img src="7-Bird's Milj.png" alt="Bird's Milk Cake" class="cake-photo">
+          <div class="cake-name-main">Bird’s Milk – كيك لبن العصفور – Лебединое молоко</div>
+          <div class="cake-name-alt">Signature Layanka bird logo cocoa top.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>150 AED / kg</strong><br>
+            Slice: <strong>15 AED</strong>
+          </p>
+        </article>
+
+        <!-- Royal Berry Cheesecake -->
+        <article class="cake-item">
+          <img src="8-Royal Berry Cheesecake.png" alt="Royal Berry Cheesecake" class="cake-photo">
+          <div class="cake-name-main">Royal Berry Cheesecake – تشيز كيك التوت – Ягодный чизкейк</div>
+          <div class="cake-name-alt">Rich cheesecake with berry topping.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>160 AED / kg</strong><br>
+            Slice: <strong>16 AED</strong>
+          </p>
+        </article>
+
+        <!-- Chocolate Cake -->
+        <article class="cake-item">
+          <img src="9-Black-Chocolate Cake.png" alt="Chocolate Cake" class="cake-photo">
+          <div class="cake-name-main">Chocolate Cake – كيك الشوكولاتة – Шоколадный торт</div>
+          <div class="cake-name-alt">Dark chocolate glaze with curls.</div>
+          <p class="cake-prices">
+            Whole cake: <strong>150 AED / kg</strong><br>
+            Slice: <strong>15 AED</strong>
+          </p>
+        </article>
+
+        <!-- Nut Fingers -->
+        <article class="cake-item">
+          <!-- يمكن إضافة صورة لاحقًا مثلاً: <img src="nut-fingers.png" ...> -->
+          <div class="cake-name-main">Nut Fingers – أصابع الجوز – Ореховые палочки</div>
+          <div class="cake-name-alt">Crunchy nut fingers – perfect with coffee.</div>
+          <p class="cake-prices">
+            150 AED / kg<br>
+            Special offer: <strong>7 AED / 3 pcs</strong>
+          </p>
+        </article>
+
+      </div>
+    </section>
+    <!-- ====== END LAYANKA – CAKE MENU SECTION ====== -->
 
     <div class="footer-small">
       Open daily – fresh cakes and desserts.
@@ -409,3 +596,4 @@
   </script>
 </body>
 </html>
+
