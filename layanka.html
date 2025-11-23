@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description" content="Layanka Sweets - Abu Dhabi, Rabdan Mall. Honey cake, Napoleon, Red Velvet and more, made fresh daily. حلويات وكيكات فاخرة في ربدان مول.">
+/* اجعل كل صور الكيك مربعة ومتماثلة */
+.cake-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* يجعل الصورة مربعة دائما */
+  object-fit: cover;       /* قص ذكي للحفاظ على الدوائر */
+  border-radius: 14px;     /* يبقي نفس تصميم الإطار */
+}
 
   <style>
     :root {
@@ -596,5 +603,6 @@
   </script>
 </body>
 </html>
+
 
 
