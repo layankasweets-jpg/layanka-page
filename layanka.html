@@ -267,14 +267,14 @@
     box-shadow: 0 3px 10px rgba(0,0,0,0.25);
   }
 
+/* حل جذري: توحيد حجم كل صور الكيك */
 .cake-item img.cake-photo {
-  width: 100%;
-  max-width: 260px;        /* أقصى عرض لكل الصور */
-  height: 260px;           /* ارتفاع ثابت */
-  object-fit: cover;       /* يقص الصورة داخل الإطار */
-  border-radius: 14px;
+  width: 240px !important;       /* عرض ثابت */
+  height: 240px !important;      /* ارتفاع ثابت */
+  object-fit: cover !important;  /* قص ذكي لتصبح جميعها نفس الإطار */
+  border-radius: 14px !important;
   display: block;
-  margin: 0 auto 8px auto; /* يجعل الصورة في المنتصف */
+  margin: 0 auto 8px auto;        /* وسط الكارد */
 }
 
 
@@ -606,6 +606,7 @@
   </script>
 </body>
 </html>
+
 
 
 
